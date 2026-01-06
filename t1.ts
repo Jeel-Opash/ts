@@ -1,12 +1,72 @@
-//class
-class person{
-    name:string;
-    age : number;
+//KeyOf :keyof with explicit keys
+interface Person{
+    name:string ;
+    age:number;
 }
-const p=new person();
-p.name="jeel";
-p.age=20;
-console.log(p.name);
+function getproperty(person : Person,key:keyof Person){
+    console.log(`the ${key} of Person is ${person[key]}`);
+}
+let person={
+    name:'jeel',
+    age:21
+};
+getproperty(person,"name");
+
+//keyof with index signatures
+// type Stringmap ={[key :string]:unknown};
+// function    crete(property:keyof Stringmap,value:string):Stringmap{
+//     return {[property]:value};
+// }
+
+
+
+
+
+//ypeScript Utility Type :partial 
+// interface Point {
+//     a:number;
+//     b:number;
+// }
+// let mainpoinr:Partial<Point>={};
+// mainpoinr.a=10;
+// console.log(mainpoinr);
+
+//required
+// interface p{
+//     a:number;
+//     b:string;
+// }
+// let b:Required<p>={a:10,b:"jeel"};
+// console.log(b);
+
+//record
+// const user:Record<string,number>={
+//     'jeel':21
+// }
+// console.log(user);
+
+//Omit:has removed age and location from the type and they can't be defined here
+//Pick : `Pick` has only kept name, 
+// so age and location were removed from the type and they can't be defined here
+//Exclude: removes types from a union.
+// ReturnType extracts the return type of a function type.
+// Parameters extracts the parameter types of a function type as an array.
+//Readonly
+
+
+
+
+
+
+//class
+// class person{
+//     name:string;
+//     age : number;
+// }
+// const p=new person();
+// p.name="jeel";
+// p.age=20;
+// console.log(p.name);
 
 
 
